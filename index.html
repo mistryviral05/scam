@@ -15,9 +15,11 @@
             background-color: #383a3c;
             /* Prevent scrolling */
         }
-        .viral{
+
+        .viral {
             background-color: red;
         }
+
         img {
             width: 100%;
             height: 100%;
@@ -29,6 +31,38 @@
 
 <body>
     <img src="Scam.jpg" alt="Scam">
+    <audio id="bg-music" src="Scam.mp3" loop hidden></audio>
+
 </body>
+<script>
+    const main = () => {
+        const audio = document.getElementById("bg-music");
+
+        //     // Try autoplay muted
+        audio.muted = true;
+        audio.play();
+        // First click par unmute karo
+        document.body.addEventListener("click", () => {
+            audio.muted = false;
+            audio.play();
+        }, { once: true });
+
+    }
+
+    main();
+    // //Lets create the function to play background music in loop
+    // window.onload = function () {
+    //     const audio = document.getElementById("bg-music");
+
+    //     // Try autoplay muted
+    //     audio.muted = true;
+    //     audio.play();
+    //     // First click par unmute karo
+    //     document.body.addEventListener("click", () => {
+    //         audio.muted = false;
+    //         audio.play();
+    //     }, { once: true });
+    // };
+</script>
 
 </html>
